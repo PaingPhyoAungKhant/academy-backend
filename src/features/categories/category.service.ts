@@ -23,7 +23,7 @@ export const updateCategory = async (
 };
 
 export const deleteCategory = async (categoryId: string): Promise<boolean> => {
-  const course = Category.findByIdAndDelete(categoryId);
-  if (!course) throw Error404('Category');
+  const category = await Category.findByIdAndDelete(categoryId);
+  if (!category) throw Error404('Category');
   return true;
 };

@@ -15,7 +15,7 @@ export const createCategoryController = async (
 ): Promise<void> => {
   const categoryData: ICategory = req.body;
   const newCategory: ICategory = await createCategory(categoryData);
-  send_json_response(res, 201, 'Course Created Successfully', newCategory);
+  send_json_response(res, 201, 'Category Created Successfully', newCategory);
 };
 
 export const getAllCategoriesController = async (
@@ -23,7 +23,7 @@ export const getAllCategoriesController = async (
   res: Response
 ): Promise<void> => {
   const categories: ICategory[] = await getAllCategories();
-  send_json_response(res, 200, 'Courses Fetched Successfully', categories);
+  send_json_response(res, 200, 'Category Fetched Successfully', categories);
 };
 
 export const updateCategoryController = async (
@@ -42,7 +42,7 @@ export const deleteCategoryController = async (
 ): Promise<void> => {
   const categoryId = req.params.id;
   await deleteCategory(categoryId);
-  send_json_response(res, 200, 'Course Deleted Successfully', {
+  send_json_response(res, 200, 'Category Deleted Successfully', {
     id: categoryId,
   });
 };
